@@ -6,7 +6,12 @@ const htmlWebpackPlugin = new HtmlWebpackPlugin({
     filename: "./index.html"
 });
 module.exports = {
-    entry: path.join(__dirname, "../public/src/index.js"),
+    entry: path.join(__dirname, "../src/index.js"),
+    output: {
+        path: path.join(__dirname, '../dist'),
+        filename: 'ramuraku.js',
+        publicPath: '/'
+    },
     module: {
         rules: [
             {
@@ -15,8 +20,12 @@ module.exports = {
                 exclude: /node_modules/
             },
             {
-                test: /\.css$/,
-                use: ["style-loader", "css-loader"]
+                test: /.s?css$/,
+                use: [
+                    "style-loader", // creates style nodes from JS strings
+                    "css-loader", // translates CSS into CommonJS
+                    "sass-loader" // compiles Sass to CSS
+                ]
             },
             {
                 test: /\.(png|jpg|gif|svg|ico)$/,
