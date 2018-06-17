@@ -1,16 +1,65 @@
+body {
+  font-family: 'Open Sans', sans-serif;
+  margin: 0;
+  display: block;
+  position: relative;
+  min-width: 1280px;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+#root {
+  height: 100vh;
+}
+
 .ramu {
   &-main {
     background: transparent;
+    height: 100%;
+    width: 100%;
   }
 
   &-header {
+    position: absolute;
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: space-between;
     height: 90px;
     padding: 0 15px 0 15px;
     color: white;
-    width: 100%;
+    width: calc(100% - 30px);
     background: black;
+    background : rgba(255,255,255,0.4);
+
+    &__title {
+
+    }
+
+    &__menu {
+      color: black;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 100;
+
+      &--item {
+        color: #333;
+        margin-right : 30px;
+        font-weight: bold;
+      }
+
+      &--ham {
+        @include ramuraku-hamburger;
+        margin-right: 30px;
+        height: 30px;
+        width: 30px;
+      }
+    }
+  }
+
+  &-first {
+    height: 100%;
+    width: 100%;
+    @include ramuraku-meat;
   }
 }

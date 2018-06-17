@@ -2,3 +2,13 @@
   background-image: url(../image/logo.svg);
   background-size: cover;
 }
+
+@mixin ramuraku-meat {
+  background-image: url(../image/meat.jpg);
+  background-size: cover;
+}
+
+@mixin ramuraku-hamburger {
+  background-image: url(../image/baseline-menu-24px.svg);
+  background-size: cover;
+}
